@@ -1,0 +1,23 @@
+@import '../../../styles/_variables.scss';
+
+.collapsedbar {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &__text {
+    rotate: 90deg;
+    position: fixed;
+    font-family: $title-font;
+    text-transform:uppercase;
+    font-weight: bold;
+    font-size: $subtitle-font-size;
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../styles/_variables';
+
+.sidenav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+
+  &__section__collapsed {
+    width: 70px;
+    min-height: 100dvh;
+  }
+
+  &__section__expanded {
+    width: 100%;
+    min-height: 100dvh;
+  }
+
+  &__home {
+  }
+
+  &__about {
+    background-color: $color-about;
+  }
+
+  &__work {
+    background-color: $color-work;
+  }
+
+  &__contact {
+    background-color: $color-contact;
+  }
+}
