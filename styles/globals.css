@@ -2,20 +2,68 @@ html {
   font-size: calc(60% + 0.8vmin);
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
-
 * {
+  padding: 0;
+  margin: 0;
   font-size: 1rem;
   box-sizing: border-box;
 }
 
 @font-face {
-  font-family: 'Rokurou';
-  src: url('../public/fonts/Rokurou.woff2') format('woff2'),
-  url('../public/fonts/Rokurou.woff') format('woff');
+  font-family: "Rokurou";
+  src:
+    url("../public/fonts/Rokurou.woff2") format("woff2"),
+    url("../public/fonts/Rokurou.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Comodo Stamp";
+  src:
+    url("../public/fonts/Comodo-Stamp.woff2") format("woff2"),
+    url("../public/fonts/Comodo-Stamp.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "RenoMono";
+  src:
+    url("../public/fonts/RenoMono.woff2") format("woff2"),
+    url("../public/fonts/RenoMono.otf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "Hazard!";
+  src:
+    url("../public/fonts/Hazard.woff2") format("woff2"),
+    url("../public/fonts/Hazard.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Hazard! Swash";
+  src:
+    url("../public/fonts/HazardSwash.woff2") format("woff2"),
+    url("../public/fonts/HazardSwash.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ogg";
+  src:
+    url("../public/fonts/Ogg-Regular.woff2") format("woff2"),
+    url("../public/fonts/Ogg-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

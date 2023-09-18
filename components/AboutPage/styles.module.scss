@@ -1,11 +1,17 @@
 @import "../../styles/_variables.scss";
 @import "../../styles/_mixins.scss";
 
-.contact {
+.about {
   @include page();
 
   &__title {
     @include titleText(black);
+  }
+
+  &__number {
+    font-family: $collapsed-number-font;
+    font-size: 1.2rem;
+    color: black;
   }
 
   &__swash {

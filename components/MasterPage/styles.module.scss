@@ -1,13 +1,16 @@
-@import '../../styles/_variables';
+@import "../../styles/_variables";
 
 .sidenav {
   width: 100vw;
   display: flex;
   justify-content: space-between;
 
-  &__section__collapsed {
-    width: 70px;
+  &__section {
+    width: 60px;
+    min-width: 60px;
     min-height: 100dvh;
+    transition: width 0.2s linear;
+    transform-origin: left;
   }
 
   &__section__expanded {
@@ -16,6 +19,7 @@
   }
 
   &__home {
+    background-color: $color-home;
   }
 
   &__about {

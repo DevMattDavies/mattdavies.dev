@@ -1,0 +1,43 @@
+@import "./_variables.scss";
+@import "./_keyframes.scss";
+
+@mixin page() {
+  width: 100%;
+  padding: $page-padding;
+  opacity: 0;
+  visibility: hidden;
+  animation: pageFadeIn 0.5s ease forwards;
+  animation-delay: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@mixin titleText($color) {
+  font-family: $title-font;
+  font-size: $title-font-size;
+  color: $color;
+  font-weight: 300;
+  gap: 40px;
+  align-items: center;
+  display: flex;
+}
+
+@mixin bodyText($color) {
+  font-family: $body-font;
+  font-size: $body-font-size;
+  color: $color;
+}
+
+@mixin swash($color) {
+  font-family: $swash-font;
+  font-size: $swash-font-size;
+  color: $color;
+}
+
+@mixin bodyFade() {
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideInFromBottom 1s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
