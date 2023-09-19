@@ -36,7 +36,6 @@ html {
     url("../public/fonts/RenoMono.otf") format("truetype");
   font-style: normal;
   font-weight: normal;
-  text-rendering: optimizeLegibility;
 }
 
 @font-face {

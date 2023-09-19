@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import styles from "./styles.module.scss";
 
-export const AboutPage = (): ReactElement | null => {
+const AboutPage = (): ReactElement | null => {
   return (
     <div className={styles.about}>
       <h1 className={styles.about__title}>
@@ -28,3 +28,5 @@ export const AboutPage = (): ReactElement | null => {
     </div>
   );
 };
+
+export default AboutPage;

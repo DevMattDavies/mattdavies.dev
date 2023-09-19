@@ -1,36 +1,8 @@
 @import "../../styles/_variables";
 
-.sidenav {
+.masterpage {
   width: 100vw;
   display: flex;
   justify-content: space-between;
-
-  &__section {
-    width: 60px;
-    min-width: 60px;
-    min-height: 100dvh;
-    transition: width 0.2s linear;
-    transform-origin: left;
-  }
-
-  &__section__expanded {
-    width: 100%;
-    min-height: 100dvh;
-  }
-
-  &__home {
-    background-color: $color-home;
-  }
-
-  &__about {
-    background-color: $color-about;
-  }
-
-  &__work {
-    background-color: $color-work;
-  }
-
-  &__contact {
-    background-color: $color-contact;
-  }
+  //min-height: 100vh;
 }

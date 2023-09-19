@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import styles from "./styles.module.scss";
 
-export const WorkPage = (): ReactElement | null => {
+const WorkPage = (): ReactElement | null => {
   return (
     <div className={styles.work}>
       <h1 className={styles.work__title}>
@@ -28,3 +28,5 @@ export const WorkPage = (): ReactElement | null => {
     </div>
   );
 };
+
+export default WorkPage;
