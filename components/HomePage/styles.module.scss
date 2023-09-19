@@ -7,12 +7,6 @@
 
   &__title {
     @include titleText(black);
-    display: flex;
-  }
-
-  &__number {
-    @include titleText(black);
-    font-size: 2rem;
   }
 
   &__swash {
@@ -27,6 +21,7 @@
   &__getintouch {
     position: relative;
     color: black;
+    white-space: nowrap;
 
     &:after {
       content: "";

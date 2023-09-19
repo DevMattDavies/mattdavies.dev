@@ -8,12 +8,6 @@
     @include titleText(black);
   }
 
-  &__number {
-    font-family: $collapsed-number-font;
-    font-size: 1.2rem;
-    color: black;
-  }
-
   &__swash {
     @include swash(black);
   }

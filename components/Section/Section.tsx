@@ -89,7 +89,7 @@ export const Section = ({
       {pathname === sectionPath ? (
         <SectionPage />
       ) : (
-        <Link href={sectionPath}>
+        <Link href={sectionPath} className={styles.section__link}>
           <CollapsedBar section={section} number={sectionNumber} />
         </Link>
       )}

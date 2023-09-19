@@ -14,14 +14,9 @@
   }
 
   &__text {
+    @include navText($collapsed-font-size);
     rotate: 90deg;
     position: fixed;
-    font-family: $nav-font;
-    font-size: $collapsed-font-size;
-    letter-spacing: 0.3rem;
-    text-transform: uppercase;
-    color: black;
-    text-decoration: none;
     gap: 10px;
   }
 
