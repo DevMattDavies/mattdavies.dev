@@ -17,11 +17,11 @@ export const MasterPage = (): ReactElement | null => {
     setBodyBackgroundColorOnLoad(pathname);
   }, [pathname]);
 
-  useEffect(() => {
-    isModalOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "unset");
-  }, [isModalOpen]);
+  // useEffect(() => {
+  //   isModalOpen
+  //     ? (document.body.style.overflow = "hidden")
+  //     : (document.body.style.overflow = "unset");
+  // }, [isModalOpen]);
 
   const pages = ["home", "about", "work", "contact"];
 
