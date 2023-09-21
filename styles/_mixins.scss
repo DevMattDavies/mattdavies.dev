@@ -3,7 +3,7 @@
 
 @mixin page() {
   width: 100%;
-  max-height: 100vh;
+  min-height: 100vh;
   padding: $page-padding;
   opacity: 0;
   visibility: hidden;

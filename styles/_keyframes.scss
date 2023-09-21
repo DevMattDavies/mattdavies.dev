@@ -1,4 +1,4 @@
-//Page fade-in
+// Page fade-in
 @keyframes pageFadeIn {
   to {
     opacity: 1;
@@ -6,7 +6,7 @@
   }
 }
 
-// Body fade-in
+// Body slide-in
 @keyframes slideInFromBottom {
   0% {
     opacity: 0;
