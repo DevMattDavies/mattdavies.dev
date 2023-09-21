@@ -9,6 +9,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  position: fixed;
+}
+
 @font-face {
   font-family: "Rokurou";
   src:
