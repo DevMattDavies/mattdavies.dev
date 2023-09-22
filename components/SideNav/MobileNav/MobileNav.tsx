@@ -1,4 +1,4 @@
-import { Dispatch, ReactElement, SetStateAction } from "react";
+import { Dispatch, ReactElement, SetStateAction, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./styles.module.scss";
@@ -34,6 +34,23 @@ const MobileNav = ({
       backgroundColor = "home";
       break;
   }
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (toggled) {
+      body.style.position = "fixed";
+      body.style.overflow = "hidden";
+    } else {
+      body.style.position = "static";
+      body.style.overflow = "auto";
+    }
+
+    return () => {
+      body.style.position = "static";
+      body.style.overflow = "auto";
+    };
+  }, [toggled]);
 
   const handleToggle = () => {
     toggle(!toggled);
