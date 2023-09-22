@@ -9,6 +9,7 @@ import { setBodyBackgroundColorOnLoad } from "../../utils/setBodyBackgroundColor
 
 export const MasterPage = (): ReactElement | null => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
 
   const router = useRouter();
   const { pathname } = router;
@@ -23,6 +24,13 @@ export const MasterPage = (): ReactElement | null => {
   //     : (document.body.style.overflow = "unset");
   // }, [isModalOpen]);
 
+  // useEffect(() => {
+  //   if (isModalOpen) {
+  //     // Store the current scroll position
+  //     setScrollPosition(window.scrollY);
+  //   }
+  // }, [isModalOpen]);
+
   const pages = ["home", "about", "work", "contact"];
 
   return (
@@ -32,6 +40,7 @@ export const MasterPage = (): ReactElement | null => {
         toggled={isModalOpen}
         toggle={setIsModalOpen}
         pathname={pathname}
+        // scrollPosition={scrollPosition}
       />
       {pages.map((page) => {
         return <Section key={page} section={page} pathname={pathname} />;

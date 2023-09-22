@@ -1,4 +1,10 @@
-import { Dispatch, ReactElement, SetStateAction, useEffect } from "react";
+import {
+  Dispatch,
+  ReactElement,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./styles.module.scss";
@@ -9,13 +15,17 @@ type MenuProps = {
   toggled: boolean;
   toggle: Dispatch<SetStateAction<boolean>>;
   pathname: string;
+  // scrollPosition: number | null;
 };
 
 const MobileNav = ({
   toggled,
   toggle,
   pathname,
-}: MenuProps): ReactElement | null => {
+} // scrollPosition,
+: MenuProps): ReactElement | null => {
+  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
+
   let backgroundColor;
   switch (pathname) {
     case "/":
@@ -36,21 +46,20 @@ const MobileNav = ({
   }
 
   useEffect(() => {
-    const body = document.body;
-
     if (toggled) {
-      body.style.position = "fixed";
-      body.style.overflow = "hidden";
-    } else {
-      body.style.position = "static";
-      body.style.overflow = "auto";
-    }
+      // Store the current scroll position when the modal is opened
+      setScrollPosition(window.scrollY);
 
-    return () => {
-      body.style.position = "static";
-      body.style.overflow = "auto";
-    };
-  }, [toggled]);
+      // Prevent scrolling when the modal is open
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore the scroll position and allow scrolling when the modal is closed
+      if (scrollPosition !== null) {
+        window.scrollTo(0, scrollPosition);
+      }
+      document.body.style.overflow = "unset";
+    }
+  }, [toggled, scrollPosition]);
 
   const handleToggle = () => {
     toggle(!toggled);
