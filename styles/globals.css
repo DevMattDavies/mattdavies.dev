@@ -10,26 +10,6 @@ html {
 }
 
 @font-face {
-  font-family: "Rokurou";
-  src:
-    url("../public/fonts/Rokurou.woff2") format("woff2"),
-    url("../public/fonts/Rokurou.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Comodo Stamp";
-  src:
-    url("../public/fonts/Comodo-Stamp.woff2") format("woff2"),
-    url("../public/fonts/Comodo-Stamp.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "RenoMono";
   src:
     url("../public/fonts/RenoMono.woff2") format("woff2"),
