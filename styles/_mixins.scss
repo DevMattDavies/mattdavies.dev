@@ -4,6 +4,7 @@
 @mixin page() {
   width: 100%;
   min-height: 100vh;
+  position: relative;
   padding: $page-padding;
   opacity: 0;
   visibility: hidden;

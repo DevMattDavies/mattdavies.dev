@@ -18,6 +18,14 @@
     @include bodyFade();
   }
 
+  &__image {
+    @media screen and (max-width: $breakpoint-desktop) {
+      width: 100%;
+      max-width: 100vw;
+      height: auto;
+    }
+  }
+
   &__getintouch {
     position: relative;
     color: black;
