@@ -6,10 +6,11 @@ import Section from "../Section/Section";
 import MobileNav from "../SideNav/MobileNav/MobileNav";
 
 import { setBodyBackgroundColorOnLoad } from "../../utils/setBodyBackgroundColorOnLoad";
+import { useLockBodyOnNavOpen } from "../../utils/useLockBodyOnNavOpen";
 
 export const MasterPage = (): ReactElement | null => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
+  const { lockBody, unlockBody } = useLockBodyOnNavOpen();
 
   const router = useRouter();
   const { pathname } = router;
@@ -19,44 +20,12 @@ export const MasterPage = (): ReactElement | null => {
   }, [pathname]);
 
   useEffect(() => {
-    const body = document.body;
     if (isModalOpen) {
-      // Store scroll position when the modal is opened
-      const currentScrollPosition = window.scrollY;
-      setScrollPosition(currentScrollPosition);
-      body.style.overflow = "hidden";
-      body.style.position = "fixed";
-      body.style.touchAction = "none";
-      body.style.top = `-${currentScrollPosition}px`;
+      lockBody();
     } else {
-      if (scrollPosition !== null) {
-        body.style.overflow = "unset";
-        body.style.position = "unset";
-        body.style.touchAction = "unset";
-        window.scrollTo(0, scrollPosition);
-      }
+      unlockBody();
     }
-
-    return () => {
-      body.style.position = "static";
-      body.style.overflow = "auto";
-    };
   }, [isModalOpen]);
-
-  useEffect(() => {
-    const tempScrollTop = window.scrollY;
-
-    window.scrollTo(0, tempScrollTop);
-
-    const body = document.body;
-    body.addEventListener(
-      "touchmove",
-      function (e) {
-        e.preventDefault();
-      },
-      false,
-    );
-  }, [isModalOpen, scrollPosition]);
 
   const pages = ["home", "about", "work", "contact"];
 
