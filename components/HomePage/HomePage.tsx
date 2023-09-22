@@ -12,8 +12,8 @@ const HomePage = (): ReactElement | null => {
         Welcome <span className={styles.home__swash}>U</span>
       </h1>
       <p className={styles.home__body}>
-        Hello! I'm Matt, and welcome to my portfolio – your gateway to the world
-        of captivating web design!
+        Hello! I&apos;m Matt, and welcome to my portfolio – your gateway to the
+        world of captivating web design!
       </p>
       <p className={styles.home__body}>
         As a passionate frontend developer, I&apos;m dedicated to crafting
