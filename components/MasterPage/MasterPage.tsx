@@ -9,6 +9,7 @@ import { setBodyBackgroundColorOnLoad } from "../../utils/setBodyBackgroundColor
 
 export const MasterPage = (): ReactElement | null => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
 
   const router = useRouter();
   const { pathname } = router;
@@ -18,13 +19,28 @@ export const MasterPage = (): ReactElement | null => {
   }, [pathname]);
 
   useEffect(() => {
+    const body = document.body;
     if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
+      // Store scroll position when the modal is opened
+      const currentScrollPosition = window.scrollY;
+      setScrollPosition(currentScrollPosition);
+      body.style.overflow = "hidden";
+      body.style.position = "fixed";
+      body.style.touchAction = "none";
+      body.style.top = `-${currentScrollPosition}px`;
     } else {
-      document.body.style.overflow = "unset";
-      document.body.style.position = "unset";
+      if (scrollPosition !== null) {
+        body.style.overflow = "unset";
+        body.style.position = "unset";
+        body.style.touchAction = "unset";
+        window.scrollTo(0, scrollPosition);
+      }
     }
+
+    return () => {
+      body.style.position = "static";
+      body.style.overflow = "auto";
+    };
   }, [isModalOpen]);
 
   useEffect(() => {
@@ -40,7 +56,7 @@ export const MasterPage = (): ReactElement | null => {
       },
       false,
     );
-  }, [isModalOpen]);
+  }, [isModalOpen, scrollPosition]);
 
   const pages = ["home", "about", "work", "contact"];
 
