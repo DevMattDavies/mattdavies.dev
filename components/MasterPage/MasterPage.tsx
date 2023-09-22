@@ -18,9 +18,13 @@ export const MasterPage = (): ReactElement | null => {
   }, [pathname]);
 
   useEffect(() => {
-    isModalOpen
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "unset");
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+    } else {
+      document.body.style.overflow = "unset";
+      document.body.style.position = "unset";
+    }
   }, [isModalOpen]);
 
   useEffect(() => {
