@@ -6,7 +6,7 @@ import Section from "../Section/Section";
 import MobileNav from "../SideNav/MobileNav/MobileNav";
 
 import { setBodyBackgroundColorOnLoad } from "../../utils/setBodyBackgroundColorOnLoad";
-import { useLockBodyOnNavOpen } from "../../utils/useLockBodyOnNavOpen";
+import { useLockBodyOnNavOpen } from "../../hooks/useLockBodyOnNavOpen";
 
 export const MasterPage = (): ReactElement | null => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
