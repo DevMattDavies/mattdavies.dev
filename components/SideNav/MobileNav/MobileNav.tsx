@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  ReactElement,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import { Dispatch, ReactElement, SetStateAction } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import styles from "./styles.module.scss";
@@ -15,17 +9,13 @@ type MenuProps = {
   toggled: boolean;
   toggle: Dispatch<SetStateAction<boolean>>;
   pathname: string;
-  // scrollPosition: number | null;
 };
 
 const MobileNav = ({
   toggled,
   toggle,
   pathname,
-} // scrollPosition,
-: MenuProps): ReactElement | null => {
-  const [scrollPosition, setScrollPosition] = useState<number | null>(null);
-
+}: MenuProps): ReactElement | null => {
   let backgroundColor;
   switch (pathname) {
     case "/":
@@ -44,22 +34,6 @@ const MobileNav = ({
       backgroundColor = "home";
       break;
   }
-
-  useEffect(() => {
-    if (toggled) {
-      // Store the current scroll position when the modal is opened
-      setScrollPosition(window.scrollY);
-
-      // Prevent scrolling when the modal is open
-      document.body.style.overflow = "hidden";
-    } else {
-      // Restore the scroll position and allow scrolling when the modal is closed
-      if (scrollPosition !== null) {
-        window.scrollTo(0, scrollPosition);
-      }
-      document.body.style.overflow = "unset";
-    }
-  }, [toggled, scrollPosition]);
 
   const handleToggle = () => {
     toggle(!toggled);
@@ -87,7 +61,6 @@ const MobileNav = ({
                   x: "200px",
                   transition: { duration: 0.2, delay: 0.4 },
                 }}
-                // transition={{ duration: 0.2 }}
               >
                 <Link
                   href="/"
@@ -107,7 +80,6 @@ const MobileNav = ({
                   x: "200px",
                   transition: { duration: 0.2, delay: 0.3 },
                 }}
-                // transition={{ duration: 0.5 }}
               >
                 <Link
                   href="/about"
@@ -127,7 +99,6 @@ const MobileNav = ({
                   x: "200px",
                   transition: { duration: 0.2, delay: 0.2 },
                 }}
-                // transition={{ duration: 0.7 }}
               >
                 <Link
                   href="/work"
@@ -147,7 +118,6 @@ const MobileNav = ({
                   x: "200px",
                   transition: { duration: 0.2, delay: 0.1 },
                 }}
-                // transition={{ duration: 0.9 }}
               >
                 <Link
                   href="/contact"
