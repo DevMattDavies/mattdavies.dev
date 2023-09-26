@@ -14,6 +14,7 @@
   flex-direction: column;
   gap: 2rem;
   overflow-y: scroll;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -33,6 +34,11 @@
   display: flex;
 
   @media screen and (max-width: $breakpoint-desktop) {
+    font-size: $title-font-size-tablet;
+    gap: 40px;
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
     font-size: $title-font-size-mobile;
     gap: 20px;
   }

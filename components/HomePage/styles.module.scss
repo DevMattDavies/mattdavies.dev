@@ -13,13 +13,49 @@
     @include swash(black);
   }
 
+  &__bodyContainer {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: $breakpoint-desktop) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
   &__body {
     @include bodyText(black);
     @include bodyFade();
   }
 
+  &__imageContainer {
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint-tablet) {
+      width: 20rem;
+
+      &:after {
+        @include bodyFade();
+        content: "";
+        background: transparent;
+        border: 1px solid black;
+        top: 12px;
+        right: -10px;
+        bottom: -7px;
+        left: 10px;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+  }
+
   &__image {
-    @media screen and (max-width: $breakpoint-desktop) {
+    @include bodyFade();
+    width: 100%;
+    height: auto;
+
+    @media screen and (max-width: $breakpoint-tablet) {
       width: 100%;
       max-width: 100vw;
       height: auto;

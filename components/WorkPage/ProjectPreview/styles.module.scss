@@ -1,0 +1,36 @@
+@import "../../../styles/_variables.scss";
+@import "../../../styles/_mixins.scss";
+@import "../../../styles/_keyframes.scss";
+
+.projectPreview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__contentContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+  }
+
+  &__description {
+  }
+
+  &__imageContainer {
+    width: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

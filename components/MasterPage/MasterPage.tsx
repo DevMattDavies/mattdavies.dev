@@ -36,7 +36,6 @@ export const MasterPage = (): ReactElement | null => {
         toggled={isModalOpen}
         toggle={setIsModalOpen}
         pathname={pathname}
-        // scrollPosition={scrollPosition}
       />
       {pages.map((page) => {
         return <Section key={page} section={page} pathname={pathname} />;

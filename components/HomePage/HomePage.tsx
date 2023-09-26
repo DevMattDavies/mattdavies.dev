@@ -27,11 +27,13 @@ const HomePage = (): ReactElement | null => {
         </Link>
         . Let&apos;s create something great together!
       </p>
-      <Image
-        src={Headshot}
-        className={styles.home__image}
-        alt="headshot"
-      ></Image>
+      <div className={styles.home__imageContainer}>
+        <Image
+          src={Headshot}
+          className={styles.home__image}
+          alt="headshot"
+        ></Image>
+      </div>
     </div>
   );
 };
