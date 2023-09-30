@@ -16,8 +16,7 @@
   &__text {
     @include navText($collapsed-font-size);
     rotate: 90deg;
-    position: fixed;
-    gap: 10px;
+    position: absolute;
   }
 
   &__numbers {
@@ -26,8 +25,6 @@
     align-items: center;
     position: absolute;
     top: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   &__number {
