@@ -13,7 +13,7 @@ const WorkPage = (): ReactElement | null => {
         Work <span className={styles.work__swash}>D</span>
       </h1>
       <p className={styles.work__body}>
-        A versatile front-end developer, I've worked on a wide selection of
+        A versatile front-end developer, I&apos;ve worked on a wide selection of
         projects for different clients; ranging from small businesses, to shop
         fronts, to personal websites with headless CMS functionality.
       </p>
