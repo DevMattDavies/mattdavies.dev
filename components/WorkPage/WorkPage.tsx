@@ -38,16 +38,14 @@ const WorkPage = (): ReactElement | null => {
       </p>
       <p className={styles.work__body}>Check out some of my work below!</p>
       {isProjectFocused ? (
-        <div className={styles.work__backButton}>
+        <div
+          className={styles.work__backButton}
+          onClick={() => {
+            setIsProjectFocused(false);
+          }}
+        >
           <WestIcon />
-          <p
-            className={styles.work__backText}
-            onClick={() => {
-              setIsProjectFocused(false);
-            }}
-          >
-            all projects
-          </p>
+          <p className={styles.work__backText}>all projects</p>
         </div>
       ) : (
         <div id="backBtn" className={styles.work__backButton}>
@@ -55,20 +53,22 @@ const WorkPage = (): ReactElement | null => {
           <p className={styles.work__backText}></p>
         </div>
       )}
-      <div className={styles.work__projects}>
-        {projectData.map((project) => {
-          return (
-            <ProjectPreview
-              key={project.id}
-              projectInfo={project}
-              selectedProject={selectedProject}
-              setSelectedProject={setSelectedProject}
-              isProjectFocused={isProjectFocused}
-              setIsProjectFocused={setIsProjectFocused}
-            />
-          );
-        })}
-      </div>
+      {!isProjectFocused ? (
+        <div className={styles.work__projects}>
+          {projectData.map((project) => {
+            return (
+              <ProjectPreview
+                key={project.id}
+                projectInfo={project}
+                selectedProject={selectedProject}
+                setSelectedProject={setSelectedProject}
+                isProjectFocused={isProjectFocused}
+                setIsProjectFocused={setIsProjectFocused}
+              />
+            );
+          })}
+        </div>
+      ) : null}
       {isProjectFocused ? (
         <div className={styles.work__projectFocused}>
           {selectedProject ? (

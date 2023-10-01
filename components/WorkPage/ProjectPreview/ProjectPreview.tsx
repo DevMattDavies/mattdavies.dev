@@ -46,7 +46,7 @@ const ProjectPreview = ({
             }}
           >
             <Image
-              src={projectInfo.image}
+              src={projectInfo.previewImage}
               className={styles.projectPreview__image}
               alt="project image"
               width={500}

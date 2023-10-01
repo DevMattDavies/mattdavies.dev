@@ -16,7 +16,7 @@ const ProjectFull = ({
       <div className={styles.projectFull__imageContainer}>
         <Image
           className={styles.projectFull__image}
-          src={selectedProject.image}
+          src={selectedProject.projectImage}
           alt={selectedProject.name}
           width={2000}
           height={2000}

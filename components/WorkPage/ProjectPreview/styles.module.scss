@@ -5,6 +5,7 @@
 .projectPreview {
   position: relative;
   overflow: hidden;
+  display: block;
 
   &:hover {
     cursor: pointer;
@@ -12,12 +13,13 @@
 
   &__imageContainer {
     width: 100%;
-    filter: brightness(50%);
+    height: max-content;
+    //filter: brightness(70%) grayscale(100%);
     transition: transform 3s ease;
 
     &:hover {
       transform: scale(1.1);
-      filter: brightness(100%);
+      //filter: brightness(100%) grayscale(0);
     }
   }
 

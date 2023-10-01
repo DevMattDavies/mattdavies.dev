@@ -81,6 +81,8 @@
 }
 
 @mixin imageBorder() {
+  position: relative;
+
   &:after {
     content: "";
     background: transparent;

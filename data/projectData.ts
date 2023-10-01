@@ -1,24 +1,26 @@
 export const projectData = [
   {
     id: 1,
-    name: "Project 1",
-    webLink: "https://www.mattdavies.dev",
-    gitLink: "https://www.github.com",
+    name: "Author Blog & Gallery",
+    webLink: "https://www.mrgdavies.com",
+    gitLink: "https://github.com/DevMattDavies/mrgdavies-website-revised",
     description: [
       "Project 1 Description",
       "Second Paragraph here",
       "Third Paragraph here",
       "Fourth Paragraph here",
     ],
-    image: "/assets/headshot.jpg",
+    previewImage: "/assets/mrgdavies_preview.png",
+    projectImage: "/assets/headshot.jpg",
   },
   {
     id: 2,
-    name: "Project 2",
-    webLink: "",
-    gitLink: "",
+    name: "Photo Agency Website",
+    webLink: "https://photosnap-multipage-website-ashen.vercel.app",
+    gitLink: "https://github.com/DevMattDavies/photosnap-multipage-website",
     description: ["Project 2 Description"],
-    image: "/assets/headshot.jpg",
+    previewImage: "/assets/agency_preview2.png",
+    projectImage: "/assets/headshot.jpg",
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ export const projectData = [
     webLink: "",
     gitLink: "",
     description: ["Project 3 Description"],
-    image: "/assets/headshot.jpg",
+    previewImage: "/assets/agency_preview2.png",
+    projectImage: "/assets/headshot.jpg",
   },
   {
     id: 4,
@@ -34,7 +37,8 @@ export const projectData = [
     webLink: "",
     gitLink: "",
     description: ["Project 4 Description"],
-    image: "/assets/headshot.jpg",
+    previewImage: "/assets/agency_preview2.png",
+    projectImage: "/assets/headshot.jpg",
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ export const projectData = [
     webLink: "",
     gitLink: "",
     description: ["Project 5 Description"],
-    image: "/assets/headshot.jpg",
+    previewImage: "/assets/agency_preview2.png",
+    projectImage: "/assets/headshot.jpg",
   },
   {
     id: 6,
@@ -50,6 +55,7 @@ export const projectData = [
     webLink: "",
     gitLink: "",
     description: ["Project 6 Description"],
-    image: "/assets/headshot.jpg",
+    previewImage: "/assets/agency_preview2.png",
+    projectImage: "/assets/headshot.jpg",
   },
 ];

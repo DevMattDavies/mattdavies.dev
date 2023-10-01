@@ -6,7 +6,8 @@ declare type ProjectType = {
   webLink: string;
   gitLink: string;
   description: string[];
-  image: string | StaticImport;
+  previewImage: string | StaticImport;
+  projectImage: string | StaticImport;
 };
 
 export { ProjectType };
