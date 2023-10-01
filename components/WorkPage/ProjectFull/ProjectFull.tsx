@@ -40,7 +40,11 @@ const ProjectFull = ({
         </Link>
       </div>
       {selectedProject.description.map((paragraph) => {
-        return <p className={styles.projectFull__body}>{paragraph}</p>;
+        return (
+          <p key={selectedProject.name} className={styles.projectFull__body}>
+            {paragraph}
+          </p>
+        );
       })}
     </div>
   );
