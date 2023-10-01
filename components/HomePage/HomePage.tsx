@@ -32,6 +32,7 @@ const HomePage = (): ReactElement | null => {
           src={Headshot}
           className={styles.home__image}
           alt="headshot"
+          priority
         ></Image>
       </div>
     </div>

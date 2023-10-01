@@ -16,16 +16,47 @@
     @include bodyText(black);
   }
 
+  &__backButton {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 15px;
+    scroll-margin-top: 2rem;
+    @include bodyFade();
+  }
+
+  &__backText {
+    @include bodyText(black);
+    @include underline();
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__hidden {
+    visibility: hidden;
+  }
+
   &__projects {
     @include bodyFade();
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
+    width: 100%;
+    max-height: 30rem;
+    gap: 0.5rem;
 
     @media screen and (max-width: $breakpoint-tablet) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
     }
+  }
+
+  &__projectFocused {
+    @include bodyFade();
+    width: 100%;
+    position: relative;
   }
 }

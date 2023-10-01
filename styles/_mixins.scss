@@ -79,3 +79,39 @@
   animation: slideInFromBottom 1s ease-in-out forwards;
   animation-delay: 1.5s;
 }
+
+@mixin imageBorder() {
+  &:after {
+    content: "";
+    background: transparent;
+    border: 1px solid black;
+    top: 1rem;
+    right: -0.8rem;
+    bottom: -0.7rem;
+    left: 1rem;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+@mixin underline() {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-out;
+  }
+
+  &:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}

@@ -1,21 +1,25 @@
 import { Dispatch, ReactElement, SetStateAction } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./styles.module.scss";
 import { projectData } from "../../../data/projectData";
+import { scrollProjectIntoView } from "../../../utils/scrollProjectIntoView";
+
+import type { ProjectType } from "../../../types/types.d.ts";
 
 type ProjectPreviewProps = {
-  projectInfo: {
-    id: number;
-    name: string;
-    description: string;
-    image: string;
-  };
-  setSelectedProject: Dispatch<SetStateAction<{} | undefined>>;
+  projectInfo: ProjectType;
+  selectedProject: ProjectType | undefined;
+  setSelectedProject: Dispatch<SetStateAction<ProjectType | undefined>>;
+  isProjectFocused: boolean;
+  setIsProjectFocused: Dispatch<SetStateAction<boolean>>;
 };
 
 const ProjectPreview = ({
   projectInfo,
   setSelectedProject,
+  isProjectFocused,
+  setIsProjectFocused,
 }: ProjectPreviewProps): ReactElement | null => {
   const handleClick = () => {
     const selectedProjectID = projectInfo.id;
@@ -23,25 +27,34 @@ const ProjectPreview = ({
       (project) => project.id === selectedProjectID,
     );
     setSelectedProject(selectedProject);
+    setIsProjectFocused(true);
+    scrollProjectIntoView();
   };
 
   return (
     <div className={styles.projectPreview} onClick={handleClick}>
-      <div className={styles.projectPreview__imageContainer}>
-        <Image
-          src={projectInfo.image}
-          className={styles.projectPreview__image}
-          alt="project image"
-          width={500}
-          height={500}
-        />
-      </div>
-      <div className={styles.projectPreview__contentContainer}>
-        <h4 className={styles.projectPreview__title}>{projectInfo.name}</h4>
-        <p className={styles.projectPreview__description}>
-          {projectInfo.description}
-        </p>
-      </div>
+      <AnimatePresence>
+        {!isProjectFocused ? (
+          <motion.div
+            key={projectInfo.id}
+            className={styles.projectPreview__imageContainer}
+            initial={false}
+            animate={{ opacity: 1 }}
+            exit={{
+              opacity: 0,
+              transition: { duration: 1, delay: 0.4 },
+            }}
+          >
+            <Image
+              src={projectInfo.image}
+              className={styles.projectPreview__image}
+              alt="project image"
+              width={500}
+              height={500}
+            />
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 };

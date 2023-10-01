@@ -4,33 +4,28 @@
 
 .projectPreview {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
   }
 
-  &__contentContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  &__title {
-  }
-
-  &__description {
-  }
-
   &__imageContainer {
     width: 100%;
+    filter: brightness(50%);
+    transition: transform 3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(100%);
+    }
   }
 
   &__image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    max-height: 30rem;
     display: block;
+    object-fit: cover;
   }
 }

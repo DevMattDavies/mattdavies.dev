@@ -31,22 +31,11 @@
   &__imageContainer {
     position: relative;
     width: 100%;
+    @include bodyFade();
+    @include imageBorder();
 
     @media screen and (min-width: $breakpoint-tablet) {
       width: 20rem;
-
-      &:after {
-        @include bodyFade();
-        content: "";
-        background: transparent;
-        border: 1px solid black;
-        top: 12px;
-        right: -10px;
-        bottom: -7px;
-        left: 10px;
-        position: absolute;
-        z-index: -1;
-      }
     }
   }
 
