@@ -36,7 +36,7 @@ const ProjectFull = ({
           href={selectedProject.gitLink}
           target="_blank"
         >
-          // github
+          {`// github`}
         </Link>
       </div>
       {selectedProject.description.map((paragraph) => {
