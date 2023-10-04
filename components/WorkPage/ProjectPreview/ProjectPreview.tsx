@@ -28,7 +28,6 @@ const ProjectPreview = ({
     );
     setSelectedProject(selectedProject);
     setIsProjectFocused(true);
-    scrollProjectIntoView();
   };
 
   return (

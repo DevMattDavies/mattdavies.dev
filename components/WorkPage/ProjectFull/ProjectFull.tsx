@@ -15,8 +15,15 @@ const ProjectFull = ({
     <div key={selectedProject.id} className={styles.projectFull}>
       <div className={styles.projectFull__imageContainer}>
         <Image
-          className={styles.projectFull__image}
-          src={selectedProject.projectImage}
+          className={`${styles.projectFull__image} ${styles.projectFull__imageDesktop}`}
+          src={selectedProject.screenshotDesktop}
+          alt={selectedProject.name}
+          width={2000}
+          height={2000}
+        />
+        <Image
+          className={`${styles.projectFull__image} ${styles.projectFull__imageMobile}`}
+          src={selectedProject.screenshotMobile}
           alt={selectedProject.name}
           width={2000}
           height={2000}
@@ -41,7 +48,7 @@ const ProjectFull = ({
       </div>
       {selectedProject.description.map((paragraph) => {
         return (
-          <p key={selectedProject.name} className={styles.projectFull__body}>
+          <p key={paragraph} className={styles.projectFull__body}>
             {paragraph}
           </p>
         );

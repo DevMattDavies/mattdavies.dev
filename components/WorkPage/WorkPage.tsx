@@ -14,18 +14,6 @@ const WorkPage = (): ReactElement | null => {
     ProjectType | undefined
   >(undefined);
 
-  const ref = useRef(null);
-  const scrollIntoView = () => {
-    const element = document.getElementById("backBtn");
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  // useEffect(() => {
-  //   if (isProjectFocused) {
-  //     scrollIntoView(ref);
-  //   }
-  // }, [isProjectFocused]);
-
   return (
     <div className={styles.work}>
       <h1 className={styles.work__title}>

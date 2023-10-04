@@ -20,7 +20,7 @@ export const Section = ({
 }: SectionProps): ReactElement | null => {
   const pageVariants = {
     initial: {
-      y: "-100vh",
+      y: "-100dvh",
       opacity: 0,
     },
     enter: {
